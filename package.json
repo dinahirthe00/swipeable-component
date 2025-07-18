@@ -1,0 +1,59 @@
+{
+  "name": "swipeable-component",
+  "version": "2.3.1",
+  "description": "Swipeable FlatList for React Native",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && npm run copy-js",
+    "copy-js": "cp src/*.js dist/ 2>/dev/null || true && echo 'declare module \"./component.js\" { import { ReactNode } from \"react\"; import { Swipeable } from \"react-native-gesture-handler\"; interface ComponentProps { children: ReactNode; renderRightActions?: () => ReactNode; renderLeftActions?: () => ReactNode; onSwipeableOpen: (directions: \"left\" | \"right\", swipeable: Swipeable) => void; } const Component: React.ForwardRefExoticComponent<ComponentProps & React.RefAttributes<Swipeable>>; export default Component; }' > dist/component.d.ts",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "George Fean",
+    "url": "https://github.com/GFean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GFean/swipeable-component"
+  },
+  "keywords": [
+    "react",
+    "swipe",
+    "swipeable",
+    "list",
+    "react-native",
+    "component",
+    "customizable",
+    "mobile",
+    "ios",
+    "android",
+    "touchscreen",
+    "listview",
+    "flatlist",
+    "swipe-to-delete",
+    "swipe-actions",
+    "gesture",
+    "react-native-gesture-handler",
+    "high-performance",
+    "left-swipe",
+    "right-swipe",
+    "swipeable-list",
+    "react-native-swipeable-list",
+    "react-native-swipeable-flatlist",
+    "ui-component"
+  ],
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-native": ">=0.71.0",
+    "react-native-gesture-handler": ">=2.10.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "typescript": "^4.4.4"
+  }
+}
+
